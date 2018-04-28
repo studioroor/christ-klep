@@ -13,4 +13,4 @@ pipelines:
         script:
           - apt-get update
           - apt-get -qq install git-ftp
-          - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://eenkorteoorlog.nl/domains/eenkorteoorlog.nl/public_html/wp_content/themes/twentythirteen-child/
+          - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://eenkorteoorlog.nl/domains/eenkorteoorlog.nl/public_html/christklep/wp-content/themes/twentythirteen-child
