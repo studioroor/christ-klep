@@ -11,11 +11,10 @@ pipelines:
   branches:
     master:
       - step:
-        trigger: manual
-        name: Deploy to Production
-        caches:
-          - composer
-        script:
-          - apt-get update
-          - apt-get -qq install git-ftp
-          - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD --syncroot src/twentythirteen-child  ftp://eenkorteoorlog.nl/domains/eenkorteoorlog.nl/public_html/christklep/wp-content/themes/twentythirteen-child
+          name: Deploy to Production
+          caches:
+            - composer
+          script:
+            - apt-get update
+            - apt-get -qq install git-ftp
+            - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD --syncroot src/twentythirteen-child  ftp://eenkorteoorlog.nl/domains/eenkorteoorlog.nl/public_html/christklep/wp-content/themes/twentythirteen-child
