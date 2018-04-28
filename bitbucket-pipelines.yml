@@ -3,11 +3,14 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
+
 image: samueldebruyn/debian-git
 
 pipelines:
-  default:
-    - step:
+
+  branches:
+    master:
+      - step:
         caches:
           - composer
         script:
