@@ -133,3 +133,8 @@ a:visited {
 	color: #e7ded5;
 	text-decoration: underline;
 }
+
+/* PAGE CONTENT */
+blockquote {
+	margin-left: 0px;
+}
