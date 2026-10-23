@@ -3,3 +3,4 @@ wp-content/*
 !wp-content/themes
 wp-content/themes/*
 !wp-content/themes/twentythirteen-child
+wp-config.php
