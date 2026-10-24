@@ -1,6 +1,7 @@
 # Website for Christ Klep
 
-Static [Astro](https://astro.build) site, editable through [Decap CMS](https://decapcms.org).
+Static [Astro](https://astro.build) site, editable through [Pages CMS](https://pagescms.org)
+(`.pages.yml`) or [Decap CMS](https://decapcms.org) (`public/admin/`).
 Content was migrated from the former WordPress site with `scripts/migrate-from-wordpress.ts`.
 
 ## Development
@@ -22,6 +23,16 @@ The colour scheme is in `./colors.md`; the styles are in `src/styles/global.css`
   - `![alt](/uploads/x.jpg "Caption")` renders a captioned figure
   - `![alt](/uploads/x.jpg#right)` floats the image right of the text (`#left` for left)
   - `![alt](/uploads/x.jpg#small)` shows it small (`#medium` for medium)
+
+## Editing with Pages CMS
+
+1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and install the Pages CMS
+   GitHub App on this repository only.
+2. Open the repository there; Pages CMS reads `.pages.yml` from the selected branch.
+3. Invite editors by email under the repository's collaborators. They log in with a link in
+   their mailbox and need no GitHub account.
+
+Every save is a commit on `main`, which triggers a new deployment.
 
 ## Deployment
 

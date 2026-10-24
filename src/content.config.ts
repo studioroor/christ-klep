@@ -7,9 +7,10 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     // Pages without a menu title are published but left out of the navigation.
-    menuTitle: z.string().optional(),
-    order: z.number().default(99),
-    description: z.string().optional(),
+    // The CMSes may save an emptied field as null, so treat null as missing.
+    menuTitle: z.string().nullish().transform((v) => v ?? undefined),
+    order: z.number().nullish().transform((v) => v ?? 99),
+    description: z.string().nullish().transform((v) => v ?? undefined),
   }),
 });
 
