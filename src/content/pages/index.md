@@ -7,7 +7,7 @@ description: Welkom op de website van Christ Klep (1959), militair-historicus en
 
 ![](/uploads/2024/12/image.jpg#right)
 
-Welkom op de website van Christ Klep (1959), [militair-historicus](/boekpublicaties/) en allround liefhebber van geschiedenis, internationale betrekkingen en wat zich nog meer afspeelt in de wondere wereld van oorlog en vrede, defensie, politiek en [maatschappij](/christ-klep-als-cartoonist/)...
+Welkom op de website van Christ Klep (1959), [militair-historicus](/boekpublicaties/) en allround liefhebber van geschiedenis, internationale betrekkingen en wat zich nog meer afspeelt in de wondere wereld van oorlog en vrede, defensie, politiek en [maatschappij](/christ-klep-als-cartoonist/).
 
 Sinds enkele jaren ben ik woonachtig in het West Brabantse Oudenbosch. Sommigen van u zullen Oudenbosch kennen van het Zouaven Museum (gewijd aan de vrijwilligers die eind negentiende eeuw afreisden om de pauselijke staat te beschermen tegen de jonge staat Italië) en de Basiliek van de H.H. Agatha en Barbara (waarvan de witte koepel velen zal zijn opgevallen op hun treinreis naar Roosendaal en verder). Naast echtgenote Sylvia, heb ik hier het gezelschap van een bijzonder knuffelbare golden retriever.
 
