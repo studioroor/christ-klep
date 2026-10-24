@@ -36,10 +36,18 @@ Every save is a commit on `main`, which triggers a new deployment.
 
 ## Deployment
 
-### Cloudflare Pages
+### Cloudflare Pages (recommended)
 
 1. Create a Pages project from the GitHub repo: build command `bun run build`, output directory `dist`.
 2. Create a GitHub OAuth app with callback URL `https://christklep.nl/api/callback`.
 3. Add `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` as Pages environment variables.
 
 `functions/api/` handles the CMS login and `public/_redirects` redirects old WordPress URLs.
+
+### GitHub Pages
+
+`.github/workflows/deploy-github-pages.yml` deploys on every push to `main`. Enable Pages with source
+"GitHub Actions" and set the custom domain `christklep.nl` in the repository settings (the site
+uses root-relative URLs, so it doesn't work under `<user>.github.io/christ-klep/`).
+GitHub Pages can't run the login functions or `_redirects`, so the CMS then needs an external
+OAuth proxy (for example a Cloudflare Worker running `functions/api/`).
