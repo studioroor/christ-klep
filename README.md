@@ -47,7 +47,8 @@ Every save is a commit on `main`, which triggers a new deployment.
 ### GitHub Pages
 
 `.github/workflows/deploy-github-pages.yml` deploys on every push to `main`. Enable Pages with source
-"GitHub Actions" and set the custom domain `christklep.nl` in the repository settings (the site
-uses root-relative URLs, so it doesn't work under `<user>.github.io/christ-klep/`).
+"GitHub Actions" in the repository settings. The workflow builds for the URL Pages reports, so the
+site works under `studioroor.github.io/christ-klep/` and moves to the root once the custom domain
+`christklep.nl` is set. Content keeps root-relative paths (`/uploads/...`); the build adds the prefix.
 GitHub Pages can't run the login functions or `_redirects`, so the CMS then needs an external
 OAuth proxy (for example a Cloudflare Worker running `functions/api/`).
