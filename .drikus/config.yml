@@ -19,11 +19,15 @@ collections:
         hint: Laat leeg om de pagina niet in het menu te tonen.
       - { name: order, label: Positie in het menu, type: number, default: 99, step: 1, required: true }
       - { name: description, label: Omschrijving voor zoekmachines, type: text }
-      # A plain Markdown box rather than richtext: the pages use images with #right/#left/#small/#medium
-      # hints, which the visual editor doesn't support yet.
+      # The site reads these hints after # in the image path (src/plugins/rehype-figure.mjs).
       - name: body
         label: Inhoud
-        type: markdown
+        type: richtext
+        imageStyles:
+          - { value: right, label: Rechts naast de tekst }
+          - { value: left, label: Links naast de tekst }
+          - { value: medium, label: Middelgroot }
+          - { value: small, label: Klein }
         hint: >-
-          Bijschrift: zet het in de titel van de afbeelding. Zet #right of #left achter de
-          bestandsnaam om tekst ernaast te zetten, of #small/#medium voor een kleinere afbeelding.
+          Bijschrift: zet het in het bijschrift van de afbeelding. Kies een stijl om tekst naast
+          de afbeelding te zetten of om de afbeelding kleiner te maken.
