@@ -20,7 +20,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
       - run: bun install --frozen-lockfile
+      # Provides the URL the site is served from: /christ-klep/ on studioroor.github.io,
+      # or the root once a custom domain is set in the repository settings.
+      - id: pages
+        uses: actions/configure-pages@v5
       - run: bun run build
+        env:
+          SITE: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

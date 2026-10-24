@@ -1,16 +1,17 @@
 ---
 import { getCollection } from "astro:content";
+import { url } from "../lib/url";
 
 const pages = (await getCollection("pages"))
   .filter((page) => page.data.menuTitle)
   .sort((a, b) => a.data.order - b.data.order);
 
-const hrefFor = (id: string) => (id === "index" ? "/" : `/${id}/`);
+const hrefFor = (id: string) => url(id === "index" ? "/" : `/${id}/`);
 ---
 
 <header class="site-header">
   <div class="container">
-    <a class="home-link" href="/" rel="home">
+    <a class="home-link" href={url("/")} rel="home">
       <span class="site-title">Christ Klep</span>
       <span class="site-description">Militair historicus</span>
     </a>
