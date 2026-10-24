@@ -1,8 +1,8 @@
 ---
-title: "Welkom op de website van Christ Klep"
-menuTitle: "Welkom op de website van Christ Klep"
+title: Welkom op de website van Christ Klep
+menuTitle: Welkom op de website van Christ Klep
 order: 1
-description: "Welkom op de website van Christ Klep (1959), militair-historicus en allround liefhebber van geschiedenis en internationale betrekkingen."
+description: Welkom op de website van Christ Klep (1959), militair-historicus en allround liefhebber van geschiedenis en internationale betrekkingen...
 ---
 
 ![](/uploads/2024/12/image.jpg#right)
