@@ -1,6 +1,12 @@
-db_data
-wp-content/*
-!wp-content/themes
-wp-content/themes/*
-!wp-content/themes/twentythirteen-child
-wp-config.php
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# local tooling
+.wrangler/
+.playwright-mcp/
+.DS_Store
+.env

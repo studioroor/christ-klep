@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects for URLs from the old WordPress site.
+/christ-klep-militair-historicus/  /  301
+/wp-admin/*                        /admin/  302
+/wp-login.php                      /admin/  302
+/wp-content/uploads/*              /uploads/:splat  301

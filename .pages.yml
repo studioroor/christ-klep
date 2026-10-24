@@ -1,0 +1,56 @@
+# Pages CMS configuration: https://pagescms.org/docs/configuration/
+media:
+  input: public/uploads
+  output: /uploads
+  categories: [image, document]
+  rename: safe
+
+content:
+  - name: pages
+    label: Pagina's
+    type: collection
+    path: src/content/pages
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    view:
+      fields: [title, menuTitle, order]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      - name: menuTitle
+        label: Titel in het menu
+        description: Laat leeg om de pagina niet in het menu te tonen.
+        type: string
+      - name: order
+        label: Positie in het menu
+        type: number
+        default: 99
+        required: true
+      - name: description
+        label: Omschrijving voor zoekmachines
+        type: text
+      - name: body
+        label: Inhoud
+        type: rich-text
+        description: >-
+          Bijschrift bij een afbeelding: zet het in de titel van de afbeelding.
+          Afbeelding rechts naast de tekst: zet #right achter de bestandsnaam (#left voor links).
+          Kleinere afbeelding: zet #small of #medium achter de bestandsnaam.
+        options:
+          format: markdown
+
+settings:
+  commit:
+    templates:
+      create: "Nieuwe pagina: {filename} (via Pages CMS)"
+      update: "Bijgewerkt: {path} (via Pages CMS)"
+      delete: "Verwijderd: {path} (via Pages CMS)"
+      rename: "Hernoemd: {oldPath} naar {newPath} (via Pages CMS)"

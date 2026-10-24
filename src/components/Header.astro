@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+
+const pages = (await getCollection("pages"))
+  .filter((page) => page.data.menuTitle)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const hrefFor = (id: string) => (id === "index" ? "/" : `/${id}/`);
+---
+
+<header class="site-header">
+  <div class="container">
+    <a class="home-link" href="/" rel="home">
+      <span class="site-title">Christ Klep</span>
+      <span class="site-description">Militair historicus</span>
+    </a>
+  </div>
+  <div class="navbar">
+    <nav class="container main-navigation" aria-label="Hoofdmenu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+      <ul id="primary-menu" class="nav-menu">
+        {
+          pages.map((page) => {
+            const href = hrefFor(page.id);
+            return (
+              <li>
+                <a href={href} aria-current={Astro.url.pathname === href ? "page" : undefined}>
+                  {page.data.menuTitle}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle")!;
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+  });
+</script>
