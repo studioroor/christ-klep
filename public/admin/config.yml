@@ -1,0 +1,56 @@
+# Decap CMS configuration: https://decapcms.org/docs/configuration-options/
+backend:
+  name: github
+  repo: studioroor/christ-klep
+  branch: main
+  # GitHub login goes through the Cloudflare Pages Functions in functions/api/.
+  base_url: https://christklep.nl
+  auth_endpoint: api/auth
+  commit_messages:
+    create: "Nieuwe pagina: {{slug}}"
+    update: "Pagina bijgewerkt: {{slug}}"
+    delete: "Pagina verwijderd: {{slug}}"
+    uploadMedia: "Afbeelding toegevoegd: {{path}}"
+    deleteMedia: "Afbeelding verwijderd: {{path}}"
+
+# Lets `bun run cms` + `bun run dev` edit the local files without logging in.
+local_backend: true
+
+locale: nl
+site_url: https://christklep.nl
+display_url: https://christklep.nl
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: pages
+    label: Pagina's
+    label_singular: Pagina
+    folder: src/content/pages
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{order}}. {{title}}"
+    sortable_fields: [order, title]
+    preview_path: "{{slug}}/"
+    fields:
+      - { label: Titel, name: title, widget: string }
+      - label: Titel in het menu
+        name: menuTitle
+        widget: string
+        required: false
+        hint: Laat leeg om de pagina niet in het menu te tonen.
+      - { label: Positie in het menu, name: order, widget: number, value_type: int, default: 99 }
+      - label: Omschrijving voor zoekmachines
+        name: description
+        widget: text
+        required: false
+      - label: Inhoud
+        name: body
+        widget: markdown
+        hint: >-
+          Bijschrift bij een afbeelding: zet het in de titel van de afbeelding.
+          Afbeelding rechts naast de tekst: zet #right achter de bestandsnaam (#left voor links).
+          Kleinere afbeelding: zet #small of #medium achter de bestandsnaam.
