@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://github.com/studioroor/drikus-cms/raw/main/schema/drikus-config.schema.json
+#
+# Drikus CMS configuration: https://github.com/studioroor/drikus-cms/blob/main/docs/content-config.md
+collections:
+  # One Markdown file per page (src/content/pages/<slug>.md), matching src/content.config.ts.
+  - name: pages
+    label: Pagina's
+    description: De pagina's van de website en hun plek in het menu
+    folder: src/content/pages
+    format: md
+    slug: "{{title}}"
+    summary: title
+    sortBy: order
+    sortOrder: asc
+    fields:
+      - { name: title, label: Titel, required: true }
+      - name: menuTitle
+        label: Titel in het menu
+        hint: Laat leeg om de pagina niet in het menu te tonen.
+      - { name: order, label: Positie in het menu, type: number, default: 99, step: 1, required: true }
+      - { name: description, label: Omschrijving voor zoekmachines, type: text }
+      # A plain Markdown box rather than richtext: the pages use images with #right/#left/#small/#medium
+      # hints, which the visual editor doesn't support yet.
+      - name: body
+        label: Inhoud
+        type: markdown
+        hint: >-
+          Bijschrift: zet het in de titel van de afbeelding. Zet #right of #left achter de
+          bestandsnaam om tekst ernaast te zetten, of #small/#medium voor een kleinere afbeelding.
